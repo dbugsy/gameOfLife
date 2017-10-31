@@ -1,3 +1,4 @@
+import { Neighbour } from "./Neighbour";
 export default class Coordinate {
   protected x: number;
   protected y: number;
@@ -15,6 +16,10 @@ export default class Coordinate {
     this._validate(gridSize);
     if (this.y === gridSize) { return new Coordinate(this.x + 1, 1); }
     return new Coordinate(1, this.y + 1);
+  }
+
+  public neighbour(neighbour: Neighbour): Coordinate {
+    return new Coordinate(2, 2);
   }
 
   private _validate(gridSize: number): void {

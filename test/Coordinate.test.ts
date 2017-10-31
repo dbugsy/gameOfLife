@@ -1,5 +1,6 @@
 import {} from "jest";
 import Coordinate from "../src/Coordinate";
+import { Neighbour } from '../src/Neighbour';
 
 describe("Coordinate", () => {
   it("is not equal to a different x coordinate", () => {
@@ -47,6 +48,14 @@ describe("Coordinate", () => {
     it("has no coordinate after (5,5)", () => {
       const coord = new Coordinate(5, 5);
       expect( () => coord.next(5)).toThrow("Coordinate is beyond grid");
+    });
+
+    describe("locates neighbours", () => {
+      it("top left", () => {
+        const coord = new Coordinate(3,3);
+        const expectedTopLeft = new Coordinate(2,2);
+        expect(coord.neighbour(Neighbour.TOP_LEFT).equals(expectedTopLeft)).toBe(true);
+      })
     });
   });
 });
