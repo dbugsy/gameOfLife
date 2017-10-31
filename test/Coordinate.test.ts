@@ -21,6 +21,11 @@ describe("Coordinate", () => {
   });
 
   describe("on a 5 * 5 orthogonal grid", () => {
+    it("does not accept grid size less than 1", () => {
+      const coord = new Coordinate(1, 1);
+      expect( () => coord.next(0)).toThrow("gridSize must be greater than 0");
+    });
+
     it("the next coordinate after (1,1) is (1,2)", () => {
       const coord = new Coordinate(1, 1);
       const expectedNextCoord = new Coordinate(1, 2);
