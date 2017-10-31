@@ -12,7 +12,7 @@ export default class Coordinate {
   }
 
   public next(gridSize: number): Coordinate {
-    return new Coordinate(1, 2);
+    return new Coordinate(1, this.y + 1);
   }
 
 }

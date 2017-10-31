@@ -26,5 +26,11 @@ describe("Coordinate", () => {
       const expectedNextCoord = new Coordinate(1, 2);
       expect(coord.next(5).equals(expectedNextCoord)).toBe(true);
     });
+
+    it("the next coordinate after (1,2) is (1,3)", () => {
+      const coord = new Coordinate(1, 2);
+      const expectedNextCoord = new Coordinate(1, 3);
+      expect(coord.next(5).equals(expectedNextCoord)).toBe(true);
+    });
   });
 });

@@ -2,7 +2,7 @@ import {} from "jest";
 import Cell from "../src/Cell";
 import { LifeStatus } from "../src/LifeStatus";
 
-describe("Cell", () => {
+describe.skip("Cell", () => {
 
   describe("will form a grid,", () => {
     describe("with a default size of 1 * 1", () => {
@@ -33,6 +33,18 @@ describe("Cell", () => {
 
       it("will have a dead cell at position 1", () => {
         const cell = new Cell(5);
+        expect(cell.lifeStatus(1)).toBe(LifeStatus.DEAD);
+      });
+
+      it("can be populated at position 25", () => {
+        const cell = new Cell(5);
+        cell.populate(25);
+        expect(cell.lifeStatus(25)).toBe(LifeStatus.ALIVE);
+      });
+
+      it("populating cell 25 will not populate cell 1", () => {
+        const cell = new Cell(5);
+        cell.populate(25);
         expect(cell.lifeStatus(1)).toBe(LifeStatus.DEAD);
       });
     });
