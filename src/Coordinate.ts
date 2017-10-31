@@ -1,4 +1,8 @@
 import { Neighbour } from "./Neighbour";
+
+const neighbours = {
+  
+}
 export default class Coordinate {
   protected x: number;
   protected y: number;

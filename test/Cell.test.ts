@@ -2,7 +2,7 @@ import {} from "jest";
 import Cell from "../src/Cell";
 import { LifeStatus } from "../src/LifeStatus";
 
-describe.skip("Cell", () => {
+describe("Cell", () => {
 
   describe("will form a grid,", () => {
     describe("with a default size of 1 * 1", () => {
