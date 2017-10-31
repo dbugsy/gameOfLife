@@ -1,6 +1,6 @@
 export default class Coordinate {
-  private x: number;
-  private y: number;
+  protected x: number;
+  protected y: number;
 
   constructor(x: number, y: number) {
     this.x = x;
@@ -8,6 +8,6 @@ export default class Coordinate {
   }
 
   public equals(other): boolean {
-    return false;
+    return this.x === other.x && this.y === other.y;
   }
 }
