@@ -23,14 +23,6 @@ describe("Cell", () => {
         const nextStep = cell.step();
         expect(nextStep.lifeStatus(1)).toBe(LifeStatus.DEAD);
       });
-
-    });
-  });
-
-  describe("will not survive", () => {
-    it("with no neighbours", () => {
-      const cell = new Cell();
-      expect(cell.nextRoundStatus()).toBe(LifeStatus.DEAD);
     });
   });
 });

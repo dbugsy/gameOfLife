@@ -18,8 +18,4 @@ export default class Cell {
   public step(): Cell {
     return new Cell();
   }
-
-  public nextRoundStatus(): LifeStatus {
-    return LifeStatus.DEAD;
-  }
 }
