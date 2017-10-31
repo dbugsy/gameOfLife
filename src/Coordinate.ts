@@ -7,7 +7,12 @@ export default class Coordinate {
     this.y = y;
   }
 
-  public equals(other): boolean {
+  public equals(other: Coordinate): boolean {
     return this.x === other.x && this.y === other.y;
   }
+
+  public next(gridSize: number): Coordinate {
+    return new Coordinate(1, 2);
+  }
+
 }

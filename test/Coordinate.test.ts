@@ -19,4 +19,12 @@ describe("Coordinate", () => {
     const endCoord = new Coordinate(1, 1);
     expect(startCoord.equals(endCoord)).toBe(true);
   });
+
+  describe("on a 5 * 5 orthogonal grid", () => {
+    it("the next coordinate after (1,1) is (1,2)", () => {
+      const coord = new Coordinate(1, 1);
+      const expectedNextCoord = new Coordinate(1, 2);
+      expect(coord.next(5).equals(expectedNextCoord)).toBe(true);
+    });
+  });
 });
