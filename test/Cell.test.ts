@@ -24,5 +24,17 @@ describe("Cell", () => {
         expect(nextStep.lifeStatus(1)).toBe(LifeStatus.DEAD);
       });
     });
+
+    describe("a 5 * 5 grid", () => {
+      it("will have a dead cell at position 25", () => {
+        const cell = new Cell(5);
+        expect(cell.lifeStatus(25)).toBe(LifeStatus.DEAD);
+      });
+
+      it("will have a dead cell at position 1", () => {
+        const cell = new Cell(5);
+        expect(cell.lifeStatus(1)).toBe(LifeStatus.DEAD);
+      });
+    });
   });
 });
