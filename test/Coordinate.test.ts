@@ -32,5 +32,16 @@ describe("Coordinate", () => {
       const expectedNextCoord = new Coordinate(1, 3);
       expect(coord.next(5).equals(expectedNextCoord)).toBe(true);
     });
+
+    it("the next coordinate after (1,5) is (2,1)", () => {
+      const coord = new Coordinate(1, 5);
+      const expectedNextCoord = new Coordinate(2, 1);
+      expect(coord.next(5).equals(expectedNextCoord)).toBe(true);
+    });
+
+    it("has no coordinate after (5,5)", () => {
+      const coord = new Coordinate(5, 5);
+      expect( () => coord.next(5)).toThrow("Coordinate is beyond grid");
+    });
   });
 });

@@ -12,6 +12,8 @@ export default class Coordinate {
   }
 
   public next(gridSize: number): Coordinate {
+    if (this.x === gridSize && this.y === gridSize) { throw new Error("Coordinate is beyond grid"); }
+    if (this.y === gridSize) { return new Coordinate(this.x + 1, 1); }
     return new Coordinate(1, this.y + 1);
   }
 
